@@ -1,25 +1,53 @@
 <div class="wrapper">
-  <ul class="nav-bar">
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        [routerLink]="['/about']"
-        routerLinkActive="active"
-      >Home</a>
-    </li>
-    <li class="nav-item">
-        <a
-          class="nav-link"
-          [routerLink]="['/contact']"
-          routerLinkActive="active"
-        >Contact Us</a>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          [routerLink]="['/skills']"
-          routerLinkActive="active"
-        >Skills</a>
-      </li>
-  </ul>
+  <div class="main-box">
+    <div class="header">
+      <p>Farzad Bahaodirfar</p>
+      <ul class="nav-bar">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/about']"
+            routerLinkActive="active"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/contact']"
+            routerLinkActive="active"
+            >Skills</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/skills']"
+            routerLinkActive="active"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="about">
+      <div class="about-left">
+        <h1>Hello! I'm Farzad, a developer based in Iran</h1>
+        <p>
+          I love building tools that are user-friendly, simple and beautiful.
+        </p>
+        <p class="">
+          I’m gaining experience in front-end development, focusing primarily on
+          Angular. Over the past year, I’ve been working at Sepidz, where I
+          contribute to building user-friendly applications tailored for the
+          restaurant industry. In addition to my front-end work, I have also
+          begun exploring back-end technologies, particularly in C# and .NET,
+          and occasionally work with SQL Server Management. I’m always eager to
+          connect with fellow professionals and explore interesting projects.
+          Feel free to reach out if you’d like to collaborate or learn more
+          about my work as a developer
+        </p>
+      </div>
+      <div class="about-right"></div>
+    </div>
+  </div>
 </div>
