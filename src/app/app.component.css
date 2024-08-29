@@ -45,12 +45,33 @@ li a {
 }
 
 .about__left h1 {
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
 }
 
 .about__left p {
   margin-top: 2rem;
   max-width: 300px;
+}
+
+.about__left--btn {
+  margin: 20px 0;
+  line-height: 0px;
+  border-radius: 5px;
+  height: 20px;
+  width: 150px;
+  padding: 23px;
+  border: 1px solid rgb(155, 155, 155);
+  outline: none;
+  cursor: pointer;
+}
+
+.linkedin-btn {
+margin-right: 5px;
+background-color: rgb(253, 195, 48);
+}
+
+.github-btn {
+
 }
 
 .about__right img {
