@@ -13,15 +13,18 @@ html {
   width: 100%;
 }
 .main-box {
-  margin: 3rem auto;
-  width: 89vw;
-  height: 89vh;
+  margin: 3rem 3rem;
   background-color: whitesmoke;
   border-radius: 20px;
   padding: 10px 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .header {
@@ -75,5 +78,7 @@ background-color: rgb(253, 195, 48);
 }
 
 .about__right img {
+  max-width: 100%;
+  height: auto;
   border-radius: 20px;
 }
