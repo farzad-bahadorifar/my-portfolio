@@ -11,7 +11,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('highlight', { static: true }) highlight!: ElementRef;
+  @ViewChild('underline', { static: true }) underline!: ElementRef;
   title = 'portfolio';
 
   constructor(private elementRef: ElementRef) {}
@@ -19,15 +19,16 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
       'whitesmoke'; // Replace with your custom color value
-  
+
     // Create a rough notation instance using the annotate function
-    const roughAnnotation = annotate(this.highlight.nativeElement, {
-      type: 'highlight',
+    const roughAnnotation = annotate(this.underline.nativeElement, {
+      type: 'underline',
+      animationDuration: 2000,
       color: '#FFD700', // Choose your highlight color
       padding: [5, 5, 5, 5], // Optional: padding around the highlight
       strokeWidth: 2, // Optional: adjust stroke width
     });
-  
+
     roughAnnotation.show();
   }
 }
