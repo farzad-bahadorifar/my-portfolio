@@ -1,4 +1,4 @@
-import RoughNotation from 'rough-notation';
+import { annotate } from 'rough-notation';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -19,15 +19,15 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
       'whitesmoke'; // Replace with your custom color value
-
-    // Create a rough notation instance
-    const roughNotation = new RoughNotation(this.highlight.nativeElement, {
+  
+    // Create a rough notation instance using the annotate function
+    const roughAnnotation = annotate(this.highlight.nativeElement, {
       type: 'highlight',
       color: '#FFD700', // Choose your highlight color
       padding: [5, 5, 5, 5], // Optional: padding around the highlight
       strokeWidth: 2, // Optional: adjust stroke width
     });
-
-    roughNotation.show();
+  
+    roughAnnotation.show();
   }
 }
