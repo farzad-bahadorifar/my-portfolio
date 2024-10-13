@@ -1,4 +1,7 @@
-import { annotate } from 'rough-notation';
+import {
+  annotate,
+  annotationGroup as createAnnotationGroup,
+} from 'rough-notation';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -11,24 +14,56 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('underline', { static: true }) underline!: ElementRef;
+  @ViewChild('highlight1', { static: true }) highlight1!: ElementRef;
+  @ViewChild('highlight2', { static: true }) highlight2!: ElementRef;
+  @ViewChild('highlight3', { static: true }) highlight3!: ElementRef;
+  @ViewChild('circle1', { static: true }) circle1!: ElementRef;
   title = 'portfolio';
 
   constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
-      'whitesmoke'; // Replace with your custom color value
+      'whitesmoke';
 
-    // Create a rough notation instance using the annotate function
-    const roughAnnotation = annotate(this.underline.nativeElement, {
-      type: 'underline',
-      animationDuration: 2000,
-      color: '#FFD700', // Choose your highlight color
-      padding: [5, 5, 5, 5], // Optional: padding around the highlight
-      strokeWidth: 2, // Optional: adjust stroke width
+    const highlightAnnotation1 = annotate(this.highlight1.nativeElement, {
+      type: 'highlight',
+      color: '#FFD700',
+      strokeWidth: 2,
+      animationDuration: 800,
     });
 
-    roughAnnotation.show();
+    const highlightAnnotation2 = annotate(this.highlight2.nativeElement, {
+      type: 'highlight',
+      color: '#f9e8bb',
+      strokeWidth: 2,
+      animationDuration: 800,
+    });
+
+    const highlightAnnotation3 = annotate(this.highlight3.nativeElement, {
+      type: 'highlight',
+      color: '#fcd4b5',
+      strokeWidth: 2,
+      animationDuration: 800,
+    });
+
+
+    const circleAnnotation = annotate(this.circle1.nativeElement, {
+      type: 'circle',
+      color: '#FFD700',
+      strokeWidth: 2,
+      animationDuration: 800,
+    });
+
+    // Group the annotations using the renamed function
+    const annotationsGroup = createAnnotationGroup([
+      highlightAnnotation1,
+      highlightAnnotation2,
+      highlightAnnotation3,
+      circleAnnotation,
+    ]);
+
+    // Show all annotations in order
+    annotationsGroup.show();
   }
 }
